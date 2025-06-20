@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+      - mysql
+      - mariadb
+    environment:
+      # Change this to point to the DB you wanna test
+      DB_TYPE: postgres
+      DB_HOST: postgres
+      DB_USER: user
+      DB_PASSWORD: pass
+      DB_NAME: mydb
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: mydb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - '3306:3306'
+
+  mariadb:
+    image: mariadb:10.11
+    environment:
+      MARIADB_ROOT_PASSWORD: pass
+      MARIADB_DATABASE: mydb
+      MARIADB_USER: user
+      MARIADB_PASSWORD: pass
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    ports:
+      - '3307:3306'
+
+volumes:
+  postgres_data:
+  mysql_data:
+  mariadb_data:
