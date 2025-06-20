@@ -1,15 +1,15 @@
 {
   "name": "sqli_test_webapp",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "asmetics",
   "license": "ISC",
-  "description": "",
+  "description": "A small test webapp for learning & practicing SQL and SQLi.",
   "dependencies": {
     "express": "^5.1.0"
   }
