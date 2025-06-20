@@ -1,19 +1,16 @@
 {
   "name": "sqli_test_webapp",
   "version": "1.0.0",
-  "description": "An webapp used to test sqli",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/asmetics/SQLi-Test-Webapp.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/asmetics/SQLi-Test-Webapp/issues"
-  },
-  "homepage": "https://github.com/asmetics/SQLi-Test-Webapp#readme"
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
